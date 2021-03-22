@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <style>
-body {
-    background-color: bisque;
-    font-family: cursive;
+    
+ footer {
+     position: absolute;
+     bottom: 30px;
+ }
+ 
 </style>
 <head>
+    <title>Title</title>
+    <p>Phonetic transcription app: Project developed by Filip, Urszula and Natalija</p>
+    <hr>
 </head>
-<title>background</title>
-<body style="background-color:bisque ;"></style>
-    <h1>FUN</h1>
-    <h2>Filip Ula Natalija</h2>
-    <h3>II MA PJN</h3>
-    <h4>nice</h4>
-    <main>
-        <p>Members:</p>
-        <ul>
-            <li>Filip Zieliński</li>
-            <li>Urszula Jankowska</li>
-            <li>Nataliya Sulzhytskaya</li>
-        </ul>
-        <br>
-        <img src="https://stockdep.net/files/styles/product/public/images/44272522.jpg?itok=Do0fHCgG" alt="Project approved by certified members of FUN">
-    </main>
-    <div></div>
-    <footer>hi</footer>
+<body>
+    <h1>Welcome!</h1>
+    <p>This online application provides you with phonetic transcription of English text</p>
+ <form>
+    <textarea id="txt" name="intext" cols="10" rows="5" style="width: 60%;" placeholder="Write text here"></textarea>
+    <p>Choose transcription variant</p>
+    <input id ="inp1" name="eng" type="radio" value="Received Pronunciatn" />Received Pronunciatin
+    <input id ="inp2" name="eng" type="radio" value="General American" />General American 
+    <button id="but" type="submit">Transcribe</button><br>
+    <textarea id="output" readonly style="margin: 0px; width: 915px; height: 135px;"></textarea>
+ </form>   
+<footer>2021 FUN</footer>
 </body>
