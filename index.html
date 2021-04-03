@@ -31,16 +31,33 @@ body {
   padding-left: 50px;
 }
 textarea {
-  width: 1000px;
-  height: 140px;
+  width: 700px;
+  height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  resize: both;
+  resize: none;
 }
-
+table, tr, td {
+    width: fit-content;
+    border: 2px double #ccc;
+    border-collapse: collapse;
+    font-size: small;
+    text-align: center;
+    line-height: 1.5;
+    font-family: "Arial";
+  
+    }
+    tbody {
+        background-color:lavender;
+    }
+    div {
+        position:absolute;
+        top: 140px;
+        left: 750px;
+    }
 </style>
 <head>
     <script src="https://kit.fontawesome.com/ddc02e71c6.js" crossorigin="anonymous"></script>
@@ -60,6 +77,83 @@ textarea {
     <textarea id="output" readonly ></textarea>
  </form>   
  <footer>2021 FUN<i class="fas fa-heart fa-1x"></i></footer>
- <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/130325075/original/31eb25dffe087815720fba49ee47480b89658a1b/do-any-phonetic-transcription-in-english.jpg" alt="symbols" width="500" height="300">
-
+ <div>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="6">International Phonetic Alphabet Symbols</td>
+        </tr>
+        <tr>
+            <td colspan="6">Consonants</td>
+        </tr>
+        <tr>
+            <td>p></span><br>pen</br></td>
+            <td>d<br>bad</br></td>
+            <td>t<br>tea</br></td>
+            <td>d<br>did</br></td>
+            <td>k<br>cat</br></td>
+            <td>g<br>got</br></td> 
+        </tr>
+        <tr>
+            <td>t&#643<br>chain</br></td>
+            <td>d&#658<br>jam</br></td>
+            <td>f<br>fall</br></td>
+            <td>v<br>van</br></td>
+            <td>&#952<br>thin</br></td>
+            <td>&eth<br>this</br></td> 
+        </tr>
+        <tr>
+            <td>s<br>so</br></td>
+            <td>z<br>zoo</br></td>
+            <td>&#643<br>shoe</br></td>
+            <td>&#658<br>vision</br></td>
+            <td>h<br>hat</br></td>
+            <td>m<br>man</br></td> 
+        </tr>
+        <tr>
+            <td>n<br>no</br></td>
+            <td>&#331<br>sing</br></td>
+            <td>l<br>leg</br></td>
+            <td>r<br>red</br></td>
+            <td>j<br>yes</br></td>
+            <td>w<br>wet</br></td> 
+        </tr>
+        <tr>
+            <td colspan="6">Vowels</td>
+        </tr>
+        <tr>
+            <td>i&#720<br>see</br></td>
+            <td>i<br>happy</br></td>
+            <td>&#618<br>sit</br></td>
+            <td>e<br>ten</br></td>
+            <td>&aelig<br>cat</br></td>
+            <td>&#593&#720<br>father</br></td> 
+        </tr>
+        <tr>
+            <td>&#594<br>got</br></td>
+            <td>&#596&#720<br>saw</br></td>
+            <td>&#650<br>put</br></td>
+            <td>u&#720<br>too</br></td>
+            <td>&#652<br>cup</br></td>
+            <td>&#604&#720<br>bird</br></td> 
+        </tr>
+        <tr>
+            <td>&#601<br>about</br></td>
+            <td>e&#618<br>say</br></td>
+            <td>a&#618<br>eye</br></td>
+            <td>&#596&#618<br>boy</br></td>
+            <td>a&#650<br>no</br></td>
+            <td>&#601&#650<br>now</br></td> 
+        </tr>
+        <tr>
+            <td>&#618&#601<br>near</br></td>
+            <td>e&#601<br>hair</br></td>
+            <td>&#650&#601<br>pure</br></td>
+            <td>o&#650<br>no</br></td>
+            <td>&#602<br>father</br></td>
+            <td>&#593<br>got</br></td> 
+        </tr>
+    </tbody>
+    </table>
+ </div>
 </body>
