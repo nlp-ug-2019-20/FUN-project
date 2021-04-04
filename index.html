@@ -24,15 +24,10 @@ body {
      background-color: white;
      border-style: outset; 
  }
- img {
-  border-radius: 8px;
-  opacity: 0.7;
-  padding-top: 20px;
-  padding-left: 50px;
-}
+
 textarea {
   width: 700px;
-  height: 150px;
+  height: 160px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -51,7 +46,7 @@ table, tr, td {
   
     }
     tbody {
-        background-color:rgb(245, 245, 248);
+        background-color: #f8f8f8;
     }
     div {
         position:absolute;
@@ -69,7 +64,7 @@ table, tr, td {
     <h1>Welcome to Transcribis!</h1>
     <p id="p2">This online application provides you with phonetic transcription of English text.</p>
  <form>
-    <textarea id="txt" name="intext" placeholder="Write text here"></textarea>
+    <textarea id="txt" name="intext" placeholder="Write text here" required></textarea>
     <p id="p3">Choose transcription variant:</p>
     <input id ="inp1" name="eng" type="radio" value="Received Pronunciation" />Received Pronunciation
     <input id ="inp2" name="eng" type="radio" value="General American" />General American 
