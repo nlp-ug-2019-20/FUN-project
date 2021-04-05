@@ -3,7 +3,7 @@
 
  footer {
      position: absolute;
-     bottom: 30px;
+     bottom: 15px;
  }
 
  h1 {
@@ -24,23 +24,35 @@ body {
      background-color: white;
      border-style: outset; 
  }
- img {
-  border-radius: 8px;
-  opacity: 0.7;
-  padding-top: 20px;
-  padding-left: 50px;
-}
+
 textarea {
-  width: 1000px;
-  height: 140px;
+  width: 700px;
+  height: 160px;
   padding: 12px 20px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  resize: both;
+  resize: none;
 }
-
+table, tr, td {
+    width: fit-content;
+    border: 2px double #ccc;
+    border-collapse: collapse;
+    font-size: small;
+    text-align: center;
+    line-height: 1.5;
+    font-family: "Arial";
+  
+    }
+    tbody {
+        background-color: #f8f8f8;
+    }
+    div {
+        position:absolute;
+        top: 140px;
+        left: 750px;
+    }
 </style>
 <head>
     <script src="https://kit.fontawesome.com/ddc02e71c6.js" crossorigin="anonymous"></script>
@@ -52,7 +64,7 @@ textarea {
     <h1>Welcome to Transcribis!</h1>
     <p id="p2">This online application provides you with phonetic transcription of English text.</p>
  <form>
-    <textarea id="txt" name="intext" placeholder="Write text here"></textarea>
+    <textarea id="txt" name="intext" placeholder="Write text here" required></textarea>
     <p id="p3">Choose transcription variant:</p>
     <input id ="inp1" name="eng" type="radio" value="Received Pronunciation" />Received Pronunciation
     <input id ="inp2" name="eng" type="radio" value="General American" />General American 
@@ -60,6 +72,83 @@ textarea {
     <textarea id="output" readonly ></textarea>
  </form>   
  <footer>2021 FUN<i class="fas fa-heart fa-1x"></i></footer>
- <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/130325075/original/31eb25dffe087815720fba49ee47480b89658a1b/do-any-phonetic-transcription-in-english.jpg" alt="symbols" width="500" height="300">
-
+ <div>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="6"><span style="color: #174372; font-size: 20px;"><b></b>International Phonetic Alphabet Symbols</b></span></td>
+        </tr>
+        <tr>
+            <td colspan="6"><span style="color: #174372; font-size: 18px;"><b></b>Consonants</b></span></td>
+        </tr>
+        <tr>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>p</b></span><br>pen</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>d</b></span><br>bad</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>t</b></span><br>tea</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>d</b></span><br>did</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>k</b></span><br>cat</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>g</b></span><br>got</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>t&#643</b></span><br>chain</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>d&#658</b></span><br>jam</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>f</b></span><br>fall</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>v</b></span><br>van</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>&#952</b></span><br>thin</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>&eth</b></span><br>this</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>s</b></span><br>so</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>z</b></span><br>zoo</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>&#643</b></span><br>shoe</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>&#658</b></span><br>vision</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>h</b></span><br>hat</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>m</b></span><br>man</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>n</b></span><br>no</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>&#331</b></span><br>sing</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>l</b></span><br>leg</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>r</b></span><br>red</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>j</b></span><br>yes</br></td>
+            <td><span style="color: #0476F0; font-size: 14px;"><b>w</b></span><br>wet</br></td> 
+        </tr>
+        <tr>
+            <td colspan="6"><span style="color: #174372; font-size: 18px;"><b></b>Vowels</b></span></td>
+        </tr>
+        <tr>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>i&#720</b></span><br>see</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>i</b></span><br>happy</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#618</b></span><br>sit</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>e</b></span><br>ten</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&aelig</b></span><br>cat</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#593&#720</b></span><br>father</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#594</b></span><br>got</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#596&#720</b></span><br>saw</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#650</b></span><br>put</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>u&#720</b></span><br>too</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#652</b></span><br>cup</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#604&#720</b></span><br>bird</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#601</b></span><br>about</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>e&#618</b></span><br>say</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>a&#618</b></span><br>eye</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#596&#618</b></span><br>boy</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>a&#650</b></span><br>no</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#601&#650</b></span><br>now</br></td> 
+        </tr>
+        <tr>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#618&#601</b></span><br>near</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>e&#601</b></span><br>hair</br></td>
+            <td><span style="color: #f00418d8; font-size: 14px;"><b>&#650&#601</b></span><br>pure</br></td>
+            <td><span style="color: #500b0b; font-size:  14px;"><b>o&#650</b></span><br>no</br></td>
+            <td><span style="color: #500b0b; font-size:  14px;"><b>&#602</b></span><br>father</br></td>
+            <td><span style="color: #500b0b; font-size:  14px;"><b>&#593</b></span><br>got</br></td> 
+        </tr>
+    </tbody>
+    </table>
+ </div>
 </body>
