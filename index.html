@@ -59,10 +59,10 @@ table, tr, td {
     }
     div {
         position:absolute;
-        top: 140px;
-        left: 750px;
+        top: 150px;
+        left: 775px;
     }
-@media only screen and (max-width: 375px) {
+@media (min-width: 375px) and (max-width: 400px) {
     h1 {
         font-size:27px;
     }
@@ -87,8 +87,25 @@ table, tr, td {
         left: 0px;
         font-size: 12px
     }
-    button {
-        position: relative;
+}
+@media (min-width: 768px) and (max-width: 800px) {
+    h1 {
+        font-size:40px;
+    }
+    p {
+        font-size:20px;
+    }
+    textarea {
+        width:600px;
+        height:170px
+    }
+    div {
+        position: absolute;
+        top: 180px;
+        left: 670px;
+    }
+    #p1 {
+        font-size: 12px;
     }
 }
 </style>
