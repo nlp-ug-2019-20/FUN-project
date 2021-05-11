@@ -10,7 +10,7 @@ if (typeof textIpaTransc !== 'object') {
         textIpaTransc._ipaDict = {};
     }
   
-    //create a function that differentiates words in ipa and errors in dyplaying them easier to see
+    //create a function that differentiates words in ipa and errors and makes them easier to see 
     function ipaWord(error, text) {
       this.error = error;
       this.text = text;
