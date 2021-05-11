@@ -89,4 +89,4 @@ if (typeof textIpaTransc !== 'object') {
   
     }
   
-  }());
+  };
