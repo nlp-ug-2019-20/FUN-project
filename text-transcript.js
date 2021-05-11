@@ -31,16 +31,12 @@ if (typeof textIpaTransc !== 'object') {
     // this will load the dictionart from certain location
     if (typeof textIpaTransc.loadDict !== 'function') {
         textIpaTransc.loadDict = function (location) {
-        
-  
+            
         if (typeof location !== 'string') {
           console.log('Error: Invalid location, no dictionary found');
         } else {
-  
           var txtFile = new XMLHttpRequest();
-  
           txtFile.open('GET', location, true);
-  
           txtFile.onreadystatechange = function() {
             if (txtFile.readyState == 4) {
               if (txtFile.status == 200 || txtFile.status == 0) {
@@ -50,11 +46,8 @@ if (typeof textIpaTransc !== 'object') {
           };
   
           txtFile.send(null);
-  
         }
-  
-      };
-  
+      }; 
     }
     
     //this is the finction to find ipa match for a word we need in a newly created (parsed) dictionary
@@ -82,11 +75,7 @@ if (typeof textIpaTransc !== 'object') {
           } else {
             return new ipaWord('undefined', word);
           }
-  
         }
-  
       };
-  
     }
-  
   };
