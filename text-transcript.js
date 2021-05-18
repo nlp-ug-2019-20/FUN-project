@@ -19,19 +19,21 @@ if (typeof textIpaTransc !== 'object') {
     //this will analyze the dictionary and divide it into separate elements, members of an array
     if (typeof textIpaTransc._parseDict !== 'function') {
         textIpaTransc._parseDict = function (lines) {
+            console.log('Dictionary parsing attempt');
     
     //this will create a dictionary for the computer, by looking for words and their ipa match using regular expessions. Then it will use word as e key and ipa match as a result
         for (var i in lines) {
           var arr = lines[i].split(/\s+/g);
           textIpaTransc._ipaDict[arr[0]] = arr[1];
         }
+        console.log('Parsing success');
       };
     }
 
     // this will load the dictionart from certain location
     if (typeof textIpaTransc.loadDict !== 'function') {
         textIpaTransc.loadDict = function (location) {
-            
+            console.log('Loading dictionary from location A');    
         if (typeof location !== 'string') {
           console.log('Error: Invalid location, no dictionary found');
         } else {
@@ -64,12 +66,13 @@ if (typeof textIpaTransc !== 'object') {
             for (var i = 1; i < 4; i++) {
               if ( typeof textIpaTransc._ipaDict[word + '(' + i + ')'] != 'undefined' ) {
                 error = 'multi';
+                
               } else {
                 break;
               }
             }
             text = text.replace(/ˈ/g, '');
-            console.log('replaced');
+            console.log('Text replaced');
             return new ipaWord(error, text);
   
           } else {
