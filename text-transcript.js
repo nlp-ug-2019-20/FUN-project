@@ -81,8 +81,4 @@ if (typeof textIpaTransc !== 'object') {
         }
       };
     }
-<<<<<<< HEAD
-  })();
-=======
   }());
->>>>>>> f6456ad481acf29d861e3dab260d965852b4f2e9
