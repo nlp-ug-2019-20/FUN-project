@@ -81,4 +81,4 @@ if (typeof textIpaTransc !== 'object') {
         }
       };
     }
-  };
+  })();
