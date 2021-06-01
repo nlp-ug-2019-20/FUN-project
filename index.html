@@ -2,27 +2,18 @@
 <style>
 
  footer {
-     position: fixed;
-     left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(228, 133, 133);
-    color: white;
-    text-align: center;
+     position: absolute;
+     bottom: 15px;
  }
 
  h1 {
     text-align: center;
-    color: black;
-    font-family: 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 2px;
+    font-family: Arial, monospace;
 }
-#p1 { 
-    font-size:11px; 
-    color:rgb(228, 133, 133); 
-    font-style:italic; 
-    }
+#p1 { font-size:10px; color:red; font-style:italic; }
 p {
-    font-family: 'Trebuchet MS', sans-serif; 
+    font-family: lucida; 
     font-size: 17px;
     color: black;
 }
@@ -59,65 +50,22 @@ table, tr, td {
     }
     div {
         position:absolute;
-        top: 150px;
-        left: 775px;
-        padding-bottom: 24px;
+        top: 140px;
+        left: 750px;
     }
-@media (min-width: 375px) and (max-width: 400px) {
-    h1 {
-        font-size:27px;
-    }
-    p {
-        font-size:18px;
-    }
-    textarea {
-        width:350px;
-        height:150px
-    }
-    div {
-        position:relative;
-        left:0px;
-        bottom:0px;
-    }
-    #p1 {
-        font-size: 9px;
-    }
-    footer {
-        position: relative;
-        bottom: -250px;
-        left: 0px;
-        font-size: 12px
-    }
-}
-@media (min-width: 768px) and (max-width: 800px) {
-    h1 {
-        font-size:40px;
-    }
-    p {
-        font-size:20px;
-    }
-    textarea {
-        width:600px;
-        height:170px
-    }
-    div {
-        position: absolute;
-        top: 180px;
-        left: 670px;
-    }
-    #p1 {
-        font-size: 12px;
-    }
-}
 </style>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ddc02e71c6.js" crossorigin="anonymous"></script>
     <title>Transcribis</title>
     <p id="p1">Phonetic transcription app: Project developed by Filip, Urszula and Natalija</p>
     <hr>
 </head>
 <body>
+    <script src="./text-transcript.js"></script>
+    <script src="./transcript-form.js"></script>
+    <script>
+        window.onload = textIpaTransc.loadDict('./ipadict.json');
+    </script>
     <h1>Welcome to Transcribis!</h1>
     <p id="p2">This online application provides you with phonetic transcription of English text.</p>
  <form>
@@ -128,6 +76,37 @@ table, tr, td {
     <button type="submit">Transcribe</button><br>
     <textarea id="output" readonly ></textarea>
  </form>   
+ <script>
+    var option = document.querySelector("[name='eng']:checked").value;
+    console.log(method)
+    if (option=="Received Pronunciation") {
+        const phonetic = document.getElementById('output');
+        const submission = document.getElementById('txt');
+        let trancript;
+        submission.onsubmit = function(event) {
+            event.preventDefault();
+            trancript = submission.value.toLowerCase();
+            let url = 'https://api.dictionaryapi.dev/api/v2/entries/en_GB/' + trancript + '?format=json';
+
+            fetch(url)
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                phonetic.innerHTML = "";
+                phon_text = response['phonetic'][0]["text"];
+                console.log(phon_text)
+                let res = document.createElement('res');
+                res.appendChild(document.createTextNode(phon_text))
+                phonetic.appendChild(res);
+            })
+        }
+
+    } 
+    if (option=="General American") {
+        transcriptionForm.convert('txt', 'output').submit();
+    }
+</script>
+ <footer>2021 FUN<i class="fas fa-heart fa-1x"></i></footer>
  <div>
     <table>
         <tbody>
@@ -207,6 +186,11 @@ table, tr, td {
     </tbody>
     </table>
  </div>
- <footer>2021 FUN<i class="fas fa-heart fa-1x"></i></footer>
+ 
 </body>
-
+<script>
+    inp=document.querySelector('#txt')
+    function giveValue() {
+    console.log(inp.value)
+    }
+</script>
