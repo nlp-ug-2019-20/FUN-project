@@ -27,7 +27,7 @@ if (typeof transcriptForm !== 'object') {
   }
 
   if (typeof transcriptForm.convert !== 'function') {
-    transcriptForm.convert = function (inID, outID, errID) {
+    transcriptForm.convert = function (inID, outID) {
 
       // Check the input field
       if (typeof inID !== 'string') {
