@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <style>
 
  footer {
@@ -117,50 +118,62 @@ table, tr, td {
     <hr>
 </head>
 <body>
-    <script src="./text-transcript.js"></script>
+    <!-- <script src="./text-transcript.js"></script>
     <script src="./transcript-form.js"></script>
     <script>
         window.onload = textIpaTransc.loadDict('./ipadict.json');
-    </script>
+    </script> -->
     <h1>Welcome to Transcribis!</h1>
     <p id="p2">This online application provides you with phonetic transcription of English text.</p>
- <form>
+ <form id="form">
     <textarea id="txt" name="intext" placeholder="Write text here" required></textarea>
     <p id="p3">Choose transcription variant:</p>
     <input id ="inp1" name="eng" type="radio" value="Received Pronunciation" checked/>Received Pronunciation
     <input id ="inp2" name="eng" type="radio" value="General American" />General American 
     <button type="submit">Transcribe</button><br>
-    <textarea id="output" readonly ></textarea>
- </form>   
+ </form>
+ <textarea id="output" readonly></textarea>
  <script>
-    var option = document.querySelector("[name='eng']:checked").value;
-    console.log(option)
-    if (option=="Received Pronunciation") {
-        const phonetic = document.getElementById('output');
-        const submission = document.getElementById('txt');
-        let trancript;
-        submission.onsubmit = function(event) {
-            event.preventDefault();
-            trancript = submission.value.toLowerCase();
-            let url = 'https://api.dictionaryapi.dev/api/v2/entries/en_GB/' + trancript + '?format=json';
+    const phonetic = document.getElementById('output');
+    const submission = document.getElementById('form');
+    let trancript;
 
-            fetch(url)
+    submission.onsubmit = async function(event) {
+        event.preventDefault();
+        let option = document.querySelector("[name='eng']:checked").value;
+        let text_to_transcribe = document.getElementById("txt").value;
+        console.log(option);
+        trancript = text_to_transcribe.toLowerCase();
+        console.log(trancript);
+        transcript_split = trancript.split(" ");
+        console.log(transcript_split);
+        let phonetic_output = "";
+        for (i = 0; i < transcript_split.length; i++) {
+            let url;
+            if (option=="Received Pronunciation") {
+                url = 'https://api.dictionaryapi.dev/api/v2/entries/en_GB/' + transcript_split[i] + '?format=json';
+            } else {
+                url = 'https://api.dictionaryapi.dev/api/v2/entries/en_US/' + transcript_split[i] + '?format=json';
+            }
+            await fetch(url)
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 phonetic.innerHTML = "";
-                phon_text = response['phonetic'][0]["text"];
-                console.log(phon_text)
-                let res = document.createElement('res');
-                res.appendChild(document.createTextNode(phon_text))
-                phonetic.appendChild(res);
+                if (response[0]['phonetics']) {
+                    console.log("here");
+                    phon_text = response[0]['phonetics'][0]["text"];
+                    console.log(phon_text);
+                    phonetic_output += phon_text.substring(1,phon_text.length-1);
+                    phonetic_output += " ";
+                    // console.log(phonetic_output);
+                } else {
+                    // console.log(transcript_split[i] + " not found")
+                }
             })
+            .then(response => phonetic.appendChild(document.createTextNode(phonetic_output)));
         }
-
     } 
-    if (option=="General American") {
-        transcriptionForm.convert('txt', 'output').submit();
-    }
 </script>
  <footer>2021 FUN<i class="fas fa-heart fa-1x"></i></footer>
  <div>
